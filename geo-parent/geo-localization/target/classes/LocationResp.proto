@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_package = "com.geo.proto";
+option java_outer_classname = "LocationRespProto";
+
+message LocationResp {
+	string userId = 1;
+	
+	Location location = 2;
+	
+	State state = 3;
+	string message = 4;
+}
+message Location {
+	double longitude = 1;
+	double latitude = 2;
+}
+enum State {
+    SUCCESS = 0;
+    NOT_FOUND = 1;
+    AUTH_FAILED = 2;
+  }

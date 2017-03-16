@@ -1,0 +1,12 @@
+syntax = "proto3";
+option java_package = "com.geo.proto";
+option java_outer_classname = "LocationReqProto";
+
+message LocationReq {
+	string userId = 1;
+	AccessPoints accessPoints = 2;
+}
+
+message AccessPoints {
+	map<string, float> points = 1;
+}

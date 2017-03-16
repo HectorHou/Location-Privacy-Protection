@@ -1,0 +1,7 @@
+com/geo/test/TestClient.class
+com/geo/client/ClientOperation.class
+com/geo/client/ClientBootstrap.class
+com/geo/client/ClientBootstrap$1.class
+com/geo/handler/LocationRespHandler.class
+com/geo/test/TestClient$1.class
+com/geo/client/LocalizationOperation.class
