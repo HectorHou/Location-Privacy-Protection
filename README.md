@@ -39,12 +39,13 @@
 
 ### 简介
 * 使用maven搭建，项目结构
--geo-parent
---geo-localization //定位实现包，指纹库 + 协议格式 + 定位实现
---geo-localization-server //定位服务器实现包，日志 + 半包处理 + 编解码 + 长连接处理 + 用户认证 + 定位处理
---geo-localization-client //定位客户伏案，通过指定socket连接定位服务器或匿名服务器，匿名过程对用户透明
---geo-anonymity //匿名实现包，数据结构（AP图，聚集系数表，表项） + 匿名实现
---geo-anonymity-server //匿名服务器 + 代理服务器，日志 + 半包处理 + 编解码 + 匿名生成 + 代理定位
+
+###### -geo-parent
+###### --geo-localization //定位实现包，指纹库 + 协议格式 + 定位实现
+###### --geo-localization-server //定位服务器实现包，日志 + 半包处理 + 编解码 + 长连接处理 + 用户认证 + 定位处理
+###### --geo-localization-client //定位客户伏案，通过指定socket连接定位服务器或匿名服务器，匿名过程对用户透明
+###### --geo-anonymity //匿名实现包，数据结构（AP图，聚集系数表，表项） + 匿名实现
+###### --geo-anonymity-server //匿名服务器 + 代理服务器，日志 + 半包处理 + 编解码 + 匿名生成 + 代理定位
 
 <div align=center><img src="https://raw.githubusercontent.com/HectorHou/Location-Privacy-Protection/master/images-folder/location2.png"></div>
 
@@ -52,23 +53,23 @@
 * 使用相对坐标,在实验室建立6×15的直角坐标系,对于每个点收集信号强度前十位的mac地址和信号强度建立指纹库
 * 消极学习，使用欧式距离 (pow(ss1 - ss1') + pow(ss2 - ss2') + ...)/ n 找到最近的三个点取均值
 * 消息格式
-	* LocationReq  (message)
+###### LocationReq  (message)
 | userId  | accessPoints  |
 | :----: |:-------:|
 |string |AccessPoints  |
-	* AccessPoints (message)
+###### AccessPoints (message)
 | points  |
 | :----------------: |
 |map < string, float > |
-	* LocationResp (message)
+###### LocationResp (message)
 | userId  | location  | state  | message  |
 | :----: |:-------:| :----: |:-------:|
 |string |Location  |State |string  |
-	* Location (message)
+###### Location (message)
 | longitude  | latitude  |
 | :----: |:-------:|
 |double |double  |
-	* State (enum)
+###### State (enum)
 | SUCCESS  | NOT_FOUND  | AUTH_FAILED  |
 | :----: |:-------:| :----: |
 |0 |1  |2 |
